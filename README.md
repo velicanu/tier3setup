@@ -4,5 +4,6 @@ tier3setup
   
 <h3>Installing Root:</h3> 
 
-At the time of writing I
+At the time of writing I was able to build root 
+
 
