@@ -6,7 +6,7 @@ tier3setup
 
 At the time of writing I was able to build root 6.00.02 from source by doing the following:
 
-```
+```bash
 ## First install prerequisites ##
 sudo apt-get install git dpkg-dev make g++ gcc binutils libx11-dev libxpm-dev libxft-dev libxext-dev
 ##  Next pull the root source and build it
