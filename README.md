@@ -31,10 +31,23 @@ In addition to root, xrootd might be useful to access data stored on the computi
 cd /path/to/root
 build/unix/installXrootd.sh -v 4.0.4
 ## add the following to your .bashrc or equivalent, note the version number
-source bin/setxrd.sh /path/to/root/xrootd-4.0.4/
+source /path/to/root/bin/setxrd.sh /path/to/root/xrootd-4.0.4/
 ```
 
 <h4>Certificates:</h4>
+
+Now all the necessary software is set up, we just need to properly authenticate. This part is a little tricky and will probably only work if you've been able to set up these certificates in the past on some other computing center. You first need to get a certificate from your institution (CERN for example), to do that you need to follow the instructions here (or elsewhere on google) https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookStartingGrid#ObtainingCert. 
+
+From this point on I'll assume you have userkey.pem and usercert.pem with the proper permissions in the ~/.globus directory.
+
+```bash
+## get some required utils
+sudo apt-get install globus-proxy-utils
+sudo apt-get install voms-clients
+## add the following to your .bashrc or equivalent
+export X509_CERT_DIR=/etc/grid-security/certificates/
+
+
 
 
 
