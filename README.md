@@ -47,7 +47,8 @@ sudo apt-get install voms-clients
 ## add the following to your .bashrc or equivalent
 export X509_CERT_DIR=/etc/grid-security/certificates/
 ## add some certificate authorities
-wget -q -O -      https://dist.eugridpma.info/distribution/igtf/current/GPG-KEY-EUGridPMA-RPM-3      | sudo apt-key add -
+wget -q -O - https://dist.eugridpma.info/distribution/igtf/current/GPG-KEY-EUGridPMA-RPM-3
+sudo apt-key add -
 sudo echo deb http://repository.egi.eu/sw/production/cas/1/current egi-igtf core >> /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get install ca-policy-egi-core 
