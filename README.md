@@ -46,8 +46,16 @@ sudo apt-get install globus-proxy-utils
 sudo apt-get install voms-clients
 ## add the following to your .bashrc or equivalent
 export X509_CERT_DIR=/etc/grid-security/certificates/
-
-
-
-
-
+## setup some default directories with voms info
+sudo mkdir -p /etc/grid-security/vomsdir/cms
+sudo mkdir -p /etc/vomses
+wget http://linuxsoft.cern.ch/wlcg/sl6/x86_64/wlcg-voms-cms-1.0.0-1.noarch.rpm
+rpm2cpio wlcg-voms-cms-1.0.0-1.noarch.rpm | cpio -i --make-directories
+sudo mv etc/grid-security/vomsdir/cms/* /grid-security/vomsdir/cms
+sudo mv etc/vomses/* /etc/vomses
+## now we're ready to try voms init and grid init
+grid-proxy-init
+voms-proxy-init --voms cms
+## if you've made it to this point then xrootd should be up and running, can test it with xrdcp by inserting a proper file path
+xrdcp root://xrootd.cmsaf.mit.edu//store/user/username/filename.root . 
+```
