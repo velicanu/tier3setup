@@ -16,7 +16,8 @@ cd root
 ./configure
 ## this part will take a while, you should see "ROOT BUILD SUCCESSFUL." at the end, otherwise troubleshoot
 make
-## next add 'source bin/thisroot.sh' to your .bashrc or equivalent
+## next add the following to your .bashrc or equivalent
+source /path/to/root/bin/thisroot.sh
 ## Test that it's working
 root
 ```
